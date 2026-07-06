@@ -25,10 +25,12 @@ app.use(morgan('dev'));
 const authRoutes = require('./routes/auth.route');
 const bookRoutes = require('./routes/book.route');
 const borrowingRoutes = require('./routes/borrowing.route');
+const userRoutes = require('./routes/users.route');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
 app.use('/api/borrowing', borrowingRoutes);
+app.use('/api/users', userRoutes);
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running' });
